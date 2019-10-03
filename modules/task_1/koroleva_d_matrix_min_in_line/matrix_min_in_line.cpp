@@ -3,6 +3,7 @@
 #include <vector>
 #include <random>
 #include <ctime>
+#include <algorithm>
 #include "../../../modules/task_1/koroleva_d_matrix_min_in_line/matrix_min_in_line.h"
 
 std::vector<int> getRandomMatrix(int m, int n) {
