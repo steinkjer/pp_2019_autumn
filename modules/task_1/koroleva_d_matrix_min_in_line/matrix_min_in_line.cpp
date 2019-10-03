@@ -1,10 +1,8 @@
 // Copyright 2018 Koroleva Daria
 #include <mpi.h>
 #include <vector>
-#include <string>
 #include <random>
 #include <ctime>
-#include <algorithm>
 #include "../../../modules/task_1/koroleva_d_matrix_min_in_line/matrix_min_in_line.h"
 
 std::vector<int> getRandomMatrix(int m, int n) {
@@ -24,11 +22,8 @@ std::vector<int> getMinsInMatrixLines(const std::vector<int>& matr, int m, int n
         int firstelem_num = i * n;
         int next_line_elem = (i + 1) * n;
 
-        int min = matr[firstelem_num];
-        for (int j = firstelem_num + 1; j < next_line_elem; ++j) {
-            if (matr[j] < min) min = matr[j];
-        }
-        out.push_back(min);
+        out.push_back(*std::min_element(matr.begin() + firstelem_num,
+                                        matr.begin() + next_line_elem));
     }
     return out;
 }
