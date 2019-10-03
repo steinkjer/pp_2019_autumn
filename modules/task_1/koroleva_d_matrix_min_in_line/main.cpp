@@ -11,7 +11,7 @@ TEST(Parallel_Operations_MPI, Test_Random_Matrix_Size) {
 
     const int m = 190;
     const int n = 27;
-    const int expected_size = m * n;
+    const size_t expected_size = m * n;
 
     std::vector<int> matr = getRandomMatrix(m, n);
 
